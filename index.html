@@ -377,6 +377,7 @@
                         <table className="w-full text-left border-collapse">
                             <thead>
                                 <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-500 text-xs uppercase tracking-wider">
+                                    <th className="px-4 py-2 font-semibold whitespace-nowrap">Model Name</th>
                                     <th className="px-4 py-2 font-semibold whitespace-nowrap">Model Variant</th>
                                     <th className="px-4 py-2 font-semibold text-right whitespace-nowrap">HIRISE INPUT</th>
                                     <th className="px-4 py-2 font-semibold text-right bg-yellow-50/50 text-yellow-800 whitespace-nowrap">AD INV PRICE</th>
@@ -386,7 +387,8 @@
                             <tbody className="divide-y divide-gray-100">
                                 {data.map((item) => (
                                     <tr key={item.id} className="hover:bg-gray-50/80 transition-colors group">
-                                        <td className="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">{item.variant}</td>
+                                        <td className="px-4 py-1 text-sm font-medium text-gray-900 whitespace-nowrap">{item.name}</td>
+                                        <td className="px-4 py-1 text-sm text-gray-600 whitespace-nowrap">{item.variant}</td>
                                         <td className="px-4 py-1 text-sm text-gray-600 text-right whitespace-nowrap">
                                             {item.hiriseInput.toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
                                         </td>
