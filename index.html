@@ -512,8 +512,6 @@
                                                 </thead>
                                                 <tbody className="divide-y divide-gray-100">
                                                     {selectedItems.map((item) => {
-                                                        const itemHiriseTotal = item.qty * item.hiriseInput;
-                                                        
                                                         return (
                                                             <tr key={item.id} className="hover:bg-gray-50/50">
                                                                 <td className="p-2 text-xs font-bold text-gray-400">{item.cat}</td>
@@ -525,9 +523,9 @@
                                                                 </td>
                                                                 <td className="p-2 text-sm font-bold text-amber-600 text-right">
                                                                     <div className="flex items-center justify-end gap-1">
-                                                                        ₹{itemHiriseTotal.toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
+                                                                        ₹{item.hiriseInput.toLocaleString('en-IN', { maximumFractionDigits: 2, minimumFractionDigits: 2 })}
                                                                         <button
-                                                                            onClick={() => copyToClipboard(item.id, itemHiriseTotal.toFixed(2))}
+                                                                            onClick={() => copyToClipboard(item.id, item.hiriseInput.toFixed(2))}
                                                                             className="text-gray-400 hover:text-blue-600 transition-colors p-1 rounded-md hover:bg-blue-50"
                                                                             title="Copy HIRISE INPUT"
                                                                         >
